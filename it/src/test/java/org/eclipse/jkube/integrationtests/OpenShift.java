@@ -15,6 +15,9 @@ package org.eclipse.jkube.integrationtests;
 
 import io.fabric8.openshift.client.OpenShiftClient;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+
 public class OpenShift {
 
   private static final String S2I_BUILD_SUFFIX = "-s2i";
@@ -29,5 +32,15 @@ public class OpenShift {
     oc.pods().withLabel(OPENSHIFT_BUILD_LABEL).list().getItems().stream()
       .filter(p -> p.getMetadata().getLabels().get(OPENSHIFT_BUILD_LABEL).startsWith(jKubeCase.getApplication()+S2I_BUILD_SUFFIX))
       .forEach(p -> oc.resource(p).delete());
+  }
+
+  /**
+   * Locks the current thread for 30 seconds to enable the Cluster to perform clean up tasks and gather resources.
+   *
+   * This is really UGLY but does the job, as we can't monitor the cluster and see when the resources are available again
+   * @throws InterruptedException
+   */
+  public static void giveTheClusterABreak() throws InterruptedException {
+    new CountDownLatch(1).await(30, TimeUnit.SECONDS);
   }
 }

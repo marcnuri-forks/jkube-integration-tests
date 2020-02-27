@@ -33,6 +33,7 @@ import java.io.File;
 
 import static org.eclipse.jkube.integrationtests.Locks.CLUSTER_RESOURCE_INTENSIVE;
 import static org.eclipse.jkube.integrationtests.OpenShift.cleanUpCluster;
+import static org.eclipse.jkube.integrationtests.OpenShift.giveTheClusterABreak;
 import static org.eclipse.jkube.integrationtests.Tags.OPEN_SHIFT;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -114,5 +115,6 @@ class VertxOcITCase extends Vertx {
     assertThat(invocationResult.getExitCode(), Matchers.equalTo(0));
     assertThatShouldDeleteAllAppliedResources(this);
     cleanUpCluster(oc, this);
+    giveTheClusterABreak();
   }
 }

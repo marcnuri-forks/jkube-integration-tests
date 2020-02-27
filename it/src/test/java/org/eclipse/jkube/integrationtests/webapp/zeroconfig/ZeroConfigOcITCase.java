@@ -34,6 +34,7 @@ import java.util.Properties;
 import static org.eclipse.jkube.integrationtests.Hacks.hackToPreventNullPointerInRegistryServiceCreateAuthConfig;
 import static org.eclipse.jkube.integrationtests.Locks.CLUSTER_RESOURCE_INTENSIVE;
 import static org.eclipse.jkube.integrationtests.OpenShift.cleanUpCluster;
+import static org.eclipse.jkube.integrationtests.OpenShift.giveTheClusterABreak;
 import static org.eclipse.jkube.integrationtests.Tags.OPEN_SHIFT;
 import static org.eclipse.jkube.integrationtests.assertions.DockerAssertion.assertImageWasRecentlyBuilt;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -119,6 +120,7 @@ class ZeroConfigOcITCase extends ZeroConfig {
     assertThat(invocationResult.getExitCode(), Matchers.equalTo(0));
     assertThatShouldDeleteAllAppliedResources(this);
     cleanUpCluster(oc, this);
+    giveTheClusterABreak();
   }
 
 }
