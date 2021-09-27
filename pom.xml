@@ -45,7 +45,7 @@
     <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
     <thorntail.version>2.5.0.Final</thorntail.version>
     <vertx.version>3.9.1</vertx.version>
-    <vertx.plugin.version>1.0.22</vertx.plugin.version>
+    <vertx.plugin.version>1.0.25</vertx.plugin.version>
     <wildfly.jar.plugin.version>2.0.1.Final</wildfly.jar.plugin.version>
     <wildfly.swarm.version>2018.5.0</wildfly.swarm.version>
     <version.org.jboss.spec.javax.ws.jboss-jaxrs-api_2.1_spec>2.0.1.Final</version.org.jboss.spec.javax.ws.jboss-jaxrs-api_2.1_spec>
