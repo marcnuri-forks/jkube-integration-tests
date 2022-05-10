@@ -32,24 +32,25 @@
     <apache.maven.maven-compiler-plugin.version>3.10.1</apache.maven.maven-compiler-plugin.version>
     <apache.maven.maven-war-plugin.version>3.3.2</apache.maven.maven-war-plugin.version>
     <apache.maven-failsafe-plugin.version>3.0.0-M6</apache.maven-failsafe-plugin.version>
-    <apache.maven.maven-invoker.version>3.1.0</apache.maven.maven-invoker.version>
+    <apache.maven.maven-invoker.version>3.2.0</apache.maven.maven-invoker.version>
     <apache.commons-codec.version>1.15</apache.commons-codec.version>
-    <camel.version>2.25.4</camel.version>
+    <camel.version>3.1.0</camel.version>
     <com.fasterxml.jackson.core.version>2.13.2</com.fasterxml.jackson.core.version>
     <com.fasterxml.jackson.dataformat.yaml.version>2.13.2</com.fasterxml.jackson.dataformat.yaml.version>
     <fabric8.kubernetes-client.version>5.12.2</fabric8.kubernetes-client.version>
+    <gradle.version>6.1.1</gradle.version>
+    <hamcrest.version>2.0.0.0</hamcrest.version>
     <jkube.version>1.8.0-SNAPSHOT</jkube.version>
     <junit.version>5.8.2</junit.version>
+    <karaf.version>4.4.0</karaf.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
-    <hamcrest.version>2.0.0.0</hamcrest.version>
-    <karaf.version>4.3.6</karaf.version>
     <openliberty.version>21.0.0.6</openliberty.version>
     <openliberty.plugin.version>3.0.1</openliberty.plugin.version>
     <quarkus.version>2.8.1.Final</quarkus.version>
     <spring-boot.version>2.6.7</spring-boot.version>
     <thorntail.version>2.7.0.Final</thorntail.version>
     <vertx.version>4.2.7</vertx.version>
-    <vertx.plugin.version>1.0.22</vertx.plugin.version>
+    <vertx.plugin.version>1.0.27</vertx.plugin.version>
     <wildfly.jar.plugin.version>2.0.1.Final</wildfly.jar.plugin.version>
     <version.org.jboss.spec.javax.ws.jboss-jaxrs-api_2.1_spec>2.0.2.Final</version.org.jboss.spec.javax.ws.jboss-jaxrs-api_2.1_spec>
   </properties>
@@ -177,6 +178,16 @@
         <groupId>io.thorntail</groupId>
         <artifactId>microprofile-openapi</artifactId>
         <version>${thorntail.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.gradle</groupId>
+        <artifactId>gradle-test-kit</artifactId>
+        <version>${gradle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.gradle</groupId>
+        <artifactId>gradle-tooling-api</artifactId>
+        <version>${gradle.version}</version>
       </dependency>
       <dependency>
           <groupId>org.jboss.spec.javax.ws.rs</groupId>
